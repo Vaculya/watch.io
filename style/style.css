@@ -1,0 +1,623 @@
+:root{
+  --second-font:'Playfair Display', serif;
+}
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  margin: 0 auto;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container{
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+header{
+    max-height: 85px;
+    padding: 29px 0;
+}
+
+.header__menu{
+    max-height: 26px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.header__mainLink{
+    text-decoration: none;
+}
+
+.header__logoInner{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 103px;
+}
+.header__logo{
+    max-width: 19px;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.14em;
+}
+
+.header__title{
+    font-family: var(--second-font);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.14em;
+    color: #555248;
+}
+
+.header__menuInner{
+    width: 422px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.header__menuList{
+    text-decoration: none;
+}
+
+.header__menuLink{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #555248;
+    text-decoration: none;
+}
+
+.header__toolsInner{
+    display: flex;
+    width: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__toolsBtn{
+    background-color: transparent;
+    border: none;
+    height: 16px;
+    padding: 0;
+    display: block;
+    cursor: pointer;
+}
+
+
+.header__toolsLiked{
+    position: relative;
+}
+
+.header__toolsImg{
+    max-height: 16px;
+}
+
+.header__liked::after{
+    content: "1";
+    width: 13px;
+    height: 13px;
+    border-radius: 100%;
+    background: #E6C8B4;
+    position: absolute;
+    font-size: 8px;
+    line-height: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -5px;
+    right: -6px;
+}
+
+
+
+
+
+
+
+.season{
+  max-height: 770px;
+  /* background-image: url(../images/seasonCollection/seasonBg.png);
+  background-repeat: no-repeat;
+  background-position: center center; */
+}
+
+
+
+.season__inner{
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+}
+
+.season__inner::before{
+  content: url(../images/seasonCollection/seasonBg.png);
+  position: absolute;
+  top: -85px;
+  z-index: -1;
+  right: 297px;
+}
+
+
+.season__info{
+  padding-left: 65px;
+  max-width: 408px;
+  max-height: 300px;
+  margin-right: 134px;
+}
+
+.season__title{
+  font-family: var(--second-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 60px;
+  color: #1B1A17;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.season__title::before{
+  content: "";
+  width: 50px;
+  border-bottom: 1px solid #8B8371;
+  position: absolute;
+  top: 50%;
+  left: -65px;
+}
+
+.season__subtitle{
+  font-family: var(--second-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 40px;
+  color: #1B1A17;
+  margin-bottom: 39px;
+}
+
+.season__text{
+  max-width: 260px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  color: rgba(27, 26, 23, 0.82);
+  margin-bottom: 64px;
+}
+
+.season__btn{
+  width: 205px;
+  height: 64px;
+  left: 181px;
+  top: 553px;
+  background: #444240;
+  border: none;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.season__descr{
+  max-width: 670px;
+  max-height: 805px;
+  padding-left: 30px;
+  padding-right: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.season__price{
+  position: absolute;
+  top: 155px;
+  left: 0;
+}
+
+.season__price::after{
+  content: "\20BD";
+}
+
+.season__price::before{
+  content: "";
+  border-bottom: 1px solid #8B8371;
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 15px);
+}
+
+.season__diam{
+  position: absolute;
+  bottom: 139px;
+  right: 0;
+}
+
+.season__diam::before{
+  content: "";
+  border-bottom: 1px solid #8B8371;
+  width: 50px;
+  position: absolute;
+  top: 50%;
+  right: calc(100% + 15px);
+}
+
+.season__watch{
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+.popular{
+  min-height: 720px;
+  padding: 79px 0 86px 0;
+}
+
+.popular__inner{
+  position: relative;
+}
+
+.popular__title{
+  text-align: center;
+  font-family: var(--second-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 43px;
+  color: #1B1A17;
+}
+
+.popular__btnToShowAll{
+  position: absolute;
+  right: 0;
+  padding: 0;
+  border: none;
+  padding-bottom: 11px;
+  border-bottom: 1px solid #C4C0B6;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.popular__wrapper{
+  margin-top: 52px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.popular__box{
+  max-width: 370px;
+  max-height: 470px;
+  padding: 35px 28px;
+}
+
+.popular__name{
+  font-family: var(--second-font);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.03em;
+  color: rgba(27, 26, 23, 0.82);
+  padding-bottom: 10px;
+}
+
+.popular__price{
+  font-family: 'Prata', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(27, 26, 23, 0.82);
+}
+
+.popular__price::after{
+  content: "\20BD";
+  padding-left: 4px;
+}
+
+.popular__img{
+  max-height: 313px;
+  margin: 0 auto;
+  position: relative;
+  border: 1px solid #E2D0C4;
+  border-radius: 100%;
+  margin-bottom: 16px;
+}
+
+.popular__more{
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  color: #1B1A17;
+  padding-left: 48px;
+  position: relative;
+}
+
+.popular__more::before{
+  content: "";
+  width: 30px;
+  border-bottom: 1px solid#8B8371;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+
+
+
+.baner{
+  min-height: 520px;
+  background-color: #F7F5EF;
+  background-size: 470px 520px;
+  background-repeat: no-repeat;
+  padding: 52px 0 21px 0;
+}
+
+.baner__inner{
+  max-width: 970px;
+  margin: 0 auto;
+}
+
+.baner__wrapper{
+  display: flex;
+  align-items: center;
+}
+
+.baner__image{
+  max-width: 521px;
+  max-height: 414px;
+  margin-right: 70px;
+}
+
+.baner__descr{
+  max-width: 377px;
+  min-height: 243px;
+  max-height: 414px;
+}
+
+.baner__title{
+  font-family: var(--second-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  color: #1B1A17;
+  margin-bottom: 38px;
+}
+
+.baner__text{
+  font-size: 16px;
+  color: #444240;
+  margin-bottom: 45px;
+}
+
+.baner__btn{
+  width: 205px;
+  height: 64px;
+  background-color: #D4B098;
+  border: none;
+  color: #FFF;
+}
+
+.slick-arrow {
+  position: absolute;
+  bottom: -20px;
+  font-size: 0;
+  border: none;
+}
+
+.slick-next{
+  right: 43%;
+  height: 10px;
+  width: 5px;
+  font-size: 0;
+  background-image: url("../images/whyWe/right-arrow-svgrepo-com.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color:transparent;
+}
+
+.slick-prev{
+  left: 51%;
+  width: 5px;
+  height: 10px;
+  font-size: 0;
+  background-image: url("../images/whyWe/left-arrow-svgrepo-com.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color:transparent;
+}
+
+
+.follow{
+  max-height: 630px;
+}
+
+.follow__inner{
+  height: 100%;
+  padding: 85px 0;
+  display: flex;
+  align-items: center;
+}
+
+.follow__info{
+  max-width: 471px;
+  margin-right: 70px;
+}
+
+.follow__new{
+  font-family:var(--second-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 43px;
+  color: #1B1A17;
+  margin-bottom: 40px;
+}
+
+.follow__text{
+  font-size: 16px;
+  color: #444240;
+  margin-bottom: 118px;
+}
+
+.follow__socialWrapper{
+  width: 135px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.follow__socialImg{
+  height: 22px;
+  width: 22px;
+}
+
+
+.follow__photoWrapper{
+  display: grid;
+  grid-template-columns:repeat(2,1fr);
+  grid-template-columns: 242px 377px;
+  gap: 10px 10px;
+}
+
+.follow__photos{
+  width: 242px;
+  height: 229px;
+}
+.follow__bigPhoto{
+  grid-column-start: 2;
+  grid-row-start:1 ;
+  grid-row-end: 3;
+  width: 377px;
+  height: 468px;
+}
+
+
+
+.footer{
+  max-height: 275px;
+  background-color: #444240;
+}
+.footer__inner{
+  padding: 67px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.footer__logo{
+  display: flex;
+  max-width: 130px;
+}
+
+
+.footer__logoImg{
+  max-width: 25.11px;
+  max-height: 25.13px;
+}
+.footer__title{
+  color: #FFFF;
+  font-family: var(--second-font);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+}
+
+.footer__link{
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  margin-bottom: 15px;
+}
